@@ -1,0 +1,120 @@
+ul{ 
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#ppContextMenu{
+    position: fixed; 
+    width: 200px; 
+    height: auto;
+    background-color: rgb(255, 255, 255); 
+    box-shadow: 2px 2px 1px 0px rgba(14, 124, 16, .3); 
+    border: 1px solid rgb(14, 124, 16); 
+    font-size: 13px;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+#ppContextMenu ul {
+    padding:  3px 0;
+    border-bottom: 1px solid rgba(14, 124, 16, .3);
+}
+#ppContextMenu ul:last-child {
+    border-bottom: none;
+}
+/* #ppContextMenu ul:nth-child(-1){
+    border-bottom: none;
+} */
+#ppContextMenu ul li{
+    padding: 5px 25px;
+}
+#ppContextMenu ul li:hover{
+    background-color:  rgba(14, 124, 16, .3);
+}
+
+.ohmygodtable{
+    position: relative;
+}
+.ohmygodtable .border{
+    position: absolute;
+    background: green;
+    
+}
+.ohmygodtable .textFa{
+    position: absolute;
+    overflow: hidden;
+}
+.ohmygodtable textarea{
+    position: absolute;
+    left:-2px;
+    top: -2px;
+    width: 0;
+    height: 0;
+    display: block;
+    padding: 0;
+    outline: none;
+    border: none;
+    box-shadow: 0 0 0 2px green;
+    overflow: hidden;
+    resize: none;
+    
+    white-space:nowrap;
+    /* word-break:keep-all;  */  
+}
+.ohmygodtable table{  
+    
+    table-layout: fixed;
+    width: 100%;
+    table-layout: fixed;
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    cursor: cell;
+}
+.ohmygodtable th{
+    height: 30px;
+    width: 100px;
+    background-color: #f3f3f3;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.ohmygodtable tr:nth-child(2n) th{
+    background-color: #fff;
+}
+/* tr td:nth-child(1){
+    background-color: #f3f3f3;
+} */
+.ohmygodtable td{
+    height: 30px;
+    width: 100px;
+    overflow: hidden;
+
+    white-space: nowrap; /* 不换行 */
+    text-overflow: ellipsis;  /* 溢出... */
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.ohmygodtable td.area{
+    position: relative;
+}
+.ohmygodtable td.area::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    background-color: green;
+    opacity: 0.1;
+    
+}
+i{
+    color: #ff790d;
+    font-size: 65px;
+    font-weight: 700;
+    display: inline-block;
+    vertical-align: -3px;
+    margin-right: 5px;
+    text-shadow: 1px 4px 1px #a6df5e;
+    
+}

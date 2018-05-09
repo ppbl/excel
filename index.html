@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul{ 
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #ppContextMenu{
+            position: fixed; 
+            width: 200px; 
+            height: auto;
+            background-color: rgb(255, 255, 255); 
+            box-shadow: 2px 2px 1px 0px rgba(14, 124, 16, .3); 
+            border: 1px solid rgb(14, 124, 16); 
+            font-size: 13px;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            cursor: default;
+        }
+        #ppContextMenu ul {
+            padding:  3px 0;
+            border-bottom: 1px solid rgba(14, 124, 16, .3);
+        }
+        #ppContextMenu ul:last-child {
+            border-bottom: none;
+        }
+        /* #ppContextMenu ul:nth-child(-1){
+            border-bottom: none;
+        } */
+        #ppContextMenu ul li{
+            padding: 5px 25px;
+        }
+        #ppContextMenu ul li:hover{
+            background-color:  rgba(14, 124, 16, .3);
+        }
+        
+        .table{
+            margin: 50px auto;
+            width: 1000px;
+            /* height: 500px; */
+            overflow-y: scroll;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -moz-user-select: none;
+        }
+        .ohmygodtable{
+            position: relative;
+        }
+        .ohmygodtable .border{
+            position: absolute;
+            background: green;
+            
+        }
+        .ohmygodtable .textFa{
+            position: absolute;
+            overflow: hidden;
+        }
+        .ohmygodtable textarea{
+            position: absolute;
+            left:-2px;
+            top: -2px;
+            width: 0;
+            height: 0;
+            display: block;
+            padding: 0;
+            outline: none;
+            border: none;
+            box-shadow: 0 0 0 2px green;
+            overflow: hidden;
+            resize: none;
+            
+            white-space:nowrap;
+            /* word-break:keep-all;  */  
+        }
+        .ohmygodtable table{  
+            
+            table-layout: fixed;
+            width: 100%;
+            table-layout: fixed;
+            border-left: 1px solid #ccc;
+            border-top: 1px solid #ccc;
+        }
+        .ohmygodtable th{
+            height: 30px;
+            width: 100px;
+            background-color: #f3f3f3;
+            border-right: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+        }
+        .ohmygodtable tr:nth-child(2n) th{
+            background-color: #fff;
+        }
+        /* tr td:nth-child(1){
+            background-color: #f3f3f3;
+        } */
+        .ohmygodtable td{
+            height: 30px;
+            width: 100px;
+            overflow: hidden;
+   
+            white-space: nowrap; /* 不换行 */
+            text-overflow: ellipsis;  /* 溢出... */
+            border-right: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+        }
+        .ohmygodtable td.area{
+            position: relative;
+        }
+        .ohmygodtable td.area::before{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            content: '';
+            background-color: green;
+            opacity: 0.1;
+            
+        }
+        i{
+            color: #ff790d;
+            font-size: 65px;
+            font-weight: 700;
+            display: inline-block;
+            vertical-align: -3px;
+            margin-right: 5px;
+            text-shadow: 1px 4px 1px #a6df5e;
+            
+        }
+    </style>
+    <!-- <script src="./dist/pptable.min.js"></script> -->
+    <script src="./pptable.js"></script>
+</head>
+<body>  
+    <!-- <video  controls width="1920"  height="500">
+        <source src="http://ossweb-img.qq.com/images/lol/v2/banner/big-v20.mp4" type="video/mp4">
+    </video> -->
+    <i>666</i>
+    <div class="table table1">
+
+    </div>
+    <div class="table table2">
+
+    </div>
+    <a href="javascript:sss('sss')">dasdsadsad</a>
+    <div id="dsada">
+        dasdsadasdasd
+            dasdasdasdas
+            <a href="/"></a>
+    </div>
+   
+    <script>
+    function sss (e) {
+        console.log(e);
+        
+    }
+        
+    
+    /* (function () {
+        console.log("%c          ........","color:red");
+        console.log("%c                  ....","color:orange");
+        console.log("%c                     ....","color:yellow");
+        console.log("%c                       ....","color:green");
+        console.log("%c     ...                ....","color:cyan");
+        console.log("%c    ...                 ....","color:blue");
+        console.log("%c   ...                  ....","color:purple");
+        console.log("%c  ...                  ....","color:deeppink");
+        console.log("%c ...                 ....","color:skyblue");
+        console.log("%c...               ....","color:orange");
+        console.log("%c  ................","color:orange");
+    })() */
+    
+        //console.log("%d年%d月%d日",2011,3,26);
+        //console.log("%c\<a href='\/'\>This is 很好看吗？\<\/a\>", "color: yellow; font-style: italic; background-color: blue;padding: 2px");
+        /* function People(name,age,performance){  
+        this.name = name;  
+        this.age = age;  
+        this.performance = performance;  
+        }  
+        //引用上面的构造函数People,声明变量people  
+        var people =new People("john",20,[80,90,99]);   */
+        //调用console.dir()方法  
+        /* var sds = document.getElementById('dsada');
+        console.dirxml( sds );   */
+        var data = [
+                [null, '说明：标黄的需要根据地区进行更改，标红的有问题且需要查文件进行复核。', null, null, null, null, null, null, null, null, null, null, null, '说明：标黄的需要根据地区进行更改，标红的有问题且需要查文件进行复核。'],
+                ['    序 号', '工程及费用名称', '工程估算费用', null, null, null, null, '比例（％）\n（占总投资）', '技术经济指标', null, null, null, '    序 号', '工程及费用名称'],
+                [null, null, '建筑工程', '安装工程', '设备与工器具\n购置', '其他费用', '合计', null, '单位', '负荷或\n工程量', '指标\n（元）', null, null, null],
+                ['Ⅰ', '工程费用', null, null, null, null, 0, null, null, null, null, null, 'Ⅰ', '工程费用'],
+                [1, '综合楼', null, null, null, null, 0, null, null, null, null, null, 1, '综合楼'],
+                [2, '食堂', null, null, null, null, 0, null, null, null, null, null, 2, '食堂'],
+                [3, '宿舍', null, null, null, null, 0, null, null, null, null, null, 3, '宿舍'],
+                [4, '医院', null, null, null, null, 0, null, null, null, null, null, 4, '医院'],
+                [5, '图书馆', null, null, null, null, 0, null, null, null, null, null, 5, '图书馆'],
+                [6, '教学楼', null, null, null, null, 0, null, null, null, null, null, 6, '教学楼'],
+                ['…', '…', '…', '…', '…', '…', 0, null, null, null, null, null, '…', '…'],
+                ['…', '小计', 0, 0, 0, 0, 0, 0, null, null, null, null, '…', '小计'],
+                ['Ⅱ', '工程建设其他费用', null, null, null, null, 3692.56, null, null, null, null, null, 'Ⅱ', '工程建设其他费用'],
+                [1, '土地使用费', '不计本次测算，已支付土地费用（由甲方定）', null, null, 0, 0, null, null, null, null, null, 1, '土地使用费'],
+                [2, '建设项目前期工作咨询费', '国家计委计价格[1999]1283号文，根据发改价格〔2015〕299号下浮40%', null, null, 39.38, 39.38, null, null, null, null, null, 2, '建设项目前期工作咨询费'],
+                [3, '建设单位管理费', '财建〔2002〕394号', null, null, 383.98, 383.98, null, null, null, null, null, 3, '建设单位管理费'],
+                [4, '场地准备费及临时\n设施费', '建标〔2007〕164号', null, null, 438.72, 438.72, null, null, null, null, null, 4, '场地准备费及临时\n设施费'],
+                [5, '城市基础设施配套费', '川发价格〔2012〕1387，140元/㎡', null, null, 0, 0, null, null, null, null, null, 5, '城市基础设施配套费'],
+                [6, '工程勘察设计费', null, null, null, null, 1393.06, null, null, null, null, null, 6, '工程勘察设计费'],
+                [6.1, '工程勘察费', '根据建标〔2007〕164号按照工程费用的0.8%~1.1%估算，根据发改价格〔2015〕299号下浮40%', null, null, 210.59, 210.59, null, null, null, null, null, 6.1, '工程勘察费'],
+                [6.2, '工程设计费', '计价格〔2002〕10号，根据发改价格〔2015〕299号下浮40%', null, null, 1182.48, 1182.48, null, null, null, null, null, 6.2, '工程设计费'],
+                [7, '工程建设监理费   ', '发改价格〔2007〕670号文，根据发改价格〔2015〕299号下浮40%', null, null, 466.97, 466.97, null, null, null, null, null, 7, '工程建设监理费   '],
+                [8, '施工图设计审查费', '川发改价格〔2011〕323号文', null, null, 0, 0, null, null, null, null, null, 8, '施工图设计审查费'],
+                [9, '环境影响咨询服务费', '计价格〔2002〕125号，根据发改价格〔2015〕299号下浮40%', null, null, 13.7, 13.7, null, null, null, null, null, 9, '环境影响咨询服务费'],
+                [10, '工程量清单及控制价编制', '川价发〔2008〕141号，根据川发改价格〔2015〕769号下浮40%', null, null, 168.74, 168.74, null, null, null, null, null, 10, '工程量清单及控制价编制'],
+                [11, '竣工结算编制费', null, null, null, 107.31, 107.31, null, null, null, null, null, 11, '竣工结算编制费'],
+                [12, '审核竣工结算费', null, null, null, 177.82, 177.82, null, null, null, null, null, 12, '审核竣工结算费'],
+                [11, '招标代理服务费 ', '计价格〔2002〕1980号文件，根据发改价格〔2015〕299号下浮40%', null, null, 28.49, 28.49, null, null, null, null, null, 11, '招标代理服务费 '],
+                [13, '劳动安全卫生评审费', '建标〔2007〕164号,取工程费用的0.1%', null, null, 43.87, 43.87, null, null, null, null, null, 13, '劳动安全卫生评审费'],
+                [14, '水土保持方案编制费', '保监〔2005〕22号', null, null, 98.48, 98.48, null, null, null, null, null, 14, '水土保持方案编制费'],
+                [15, '工程保险费', '建标〔2007〕164号，取工程费用的0.45%', null, null, 197.42, 197.42, null, null, null, null, null, 15, '工程保险费'],
+                [16, '地质灾害危险性评价费', '财建〔2007〕52号，\n发改办价格〔2006〕745号，工程费用的0.3%', null, null, 131.62, 131.62, null, null, null, null, null, 16, '地质灾害危险性评价费'],
+                [17, '地震安全性评价费', '发改价格〔2010〕2320号', null, null, 3, 3, null, null, null, null, null, 17, '地震安全性评价费'],
+                [18, '防雷检测费', '川价费〔2004〕19号', null, null, 0, 0, null, null, null, null, null, 18, '防雷检测费'],
+                [19, '文物勘探费', '成发改收费〔2013〕21号文，3元/㎡', null, null, 0, 0, null, null, null, null, null, 19, '文物勘探费'],
+                [20, '白蚁防治费', '成发改收费〔2013〕21号文，1.5元/㎡', null, null, 0, 0, null, null, null, null, null, 20, '白蚁防治费'],
+                [21, '防空地下室异地建设费', '成发改收费〔2013〕21号文，50元/㎡', null, null, 0, 0, null, null, null, null, null, 21, '防空地下室异地建设费'],
+                [27, '小计', null, null, null, null, 3692.56, 1, null, null, null, null, 27, '小计'],
+                ['Ⅲ', '预备费', null, null, null, null, 0, null, null, null, null, null, 'Ⅲ', '预备费'],
+                [1, '基本预备费', null, null, null, null, null, null, null, null, null, null, 1, '基本预备费'],
+                [2, '涨价预备费', null, null, null, null, null, null, null, null, null, null, 2, '涨价预备费'],
+                [3, '小计', null, null, null, null, 0, null, null, null, null, null, 3, '小计'],
+                ['Ⅳ', '建设期利息', null, null, null, null, null, null, null, null, null, null, 'Ⅳ', '建设期利息'],
+                ['Ⅴ', '铺地流动资金', null, null, null, null, null, null, null, null, null, null, 'Ⅴ', '铺地流动资金'],
+                ['Ⅵ', '总投资', null, null, null, null, 3692.56, null, null, null, null, null, 'Ⅵ', '总投资'],
+                [null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+                [null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+                [null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+                [null, null, null, null, ' ', null, null, null, null, null, null, null, null, null],
+                [null, '说明：标黄的需要根据地区进行更改，标红的有问题且需要查文件进行复核。', null, null, null, null, null, null, null, null, null, null, null, '说明：标黄的需要根据地区进行更改，标红的有问题且需要查文件进行复核。']
+            ]
+        var datas =  [
+                [
+                    [
+                        ['dsa', 'dsa', 'dsa', 'dsa']
+                    ],
+                    [
+                        ['dsa', 'dsa', 'dsa', 'dsa']
+                    ]
+                ],
+                [
+                    ['dsa', 'dsa', 'dsa', 'dsa'],
+                    ['你好', 'dsa', 'dsa', 'dsa'],
+                    ['好的', 'dsa', 'dsa', 'dsa']
+                ],
+                [
+                    ['1', '2', '3', '4'],
+                    ['2', '4', '6', '8']
+                ],
+                ['好吧好吧', 'dsa', 'dsa', 'dsa']
+            ];
+            //console.table(datas);
+             /* 37 38 39 40 */
+        var options = {
+            el: '.table1', // 容器盒子选择器
+            hasCol: 10, // 内容长度，必填,不填默认为10,data数据内容超出10也只显示10条
+            data: datas, // 数据
+            showCol: 55, //列长度，可选，不填默认为内容长度conCount,填的话即使小于内容长度也会覆盖
+            showRow: 12, //  行长度， 同上行长度
+            rowHeaders: ['好吧好吧', '特好听也','好吧好吧', '特好听也','好吧好吧', '特好听也'],
+            colHeaders: {
+                "大师傅大": ['嗯啊', '打算', '打算', '打算']
+            },
+            colHeadersColor: "",
+            colHeadersColorAlternate: ["deeppink", "skyblue", "#fff"],
+            contextMenu: true, //上下文菜单
+        } 
+        /* return this.colHeaders[style] === "n" ?
+              index + 1 :
+              this.colHeaders[style] ?
+                this.colHeaders[style][index] ?
+                this.colHeaders[style][index] :
+                index + 1:
+                index + 1; */
+        var pptable = new PpTable(options);
+        var pptables = new PpTable({
+            el: '.table2', // 容器盒子选择器
+            hasCol: 10, // 内容长度，必填,不填默认为10,data数据内容超出10也只显示10条
+            data: data, // 数据
+             colHeaders: {
+                "小师傅小": ['嗯啊', '打算', '打算', '打算']
+            }, 
+        });
+    
+        // 更新数据 更新所有  特定行  特定列  特定单元格 
+        //console.log(pptable.$updateData);
+        
+        //pptable.$updateData().all(datas);// 更新所有数据,只接受二维数组
+        pptable.$updateData().rows({ // 更新行
+            R1: {
+                data: ['嗯啊', null, '打算', '打算', '打算'],
+                style: {
+                    backgroundColor: "green",
+                    fontSize: "26px",
+                    height: "40px"
+                },
+                html: "<select><option>倒萨倒萨</option></select>"
+            },
+            R2: {
+                data: ['1', '打算', '打算', '打算'],
+            },
+            R3: {
+                data: ['嗯啊', '打算', '打算', '打算'],
+            },
+            R4: {
+                data: ['嗯啊', '打算', '打算', '打算'],
+            }
+        })
+        pptable.$updateData().cols({ // 更新列
+            C1: {
+                data: ['嗯啊', '打算', '打算', '打算'],
+            },
+            C2: {
+                data: ['的撒', '3', '的撒', '8'],
+                style: {
+                    backgroundColor: "green",
+                    fontSize: "24px",
+                    height: "40px"
+                },
+                class:['dsa','dsads','jhggh']
+            },
+            C3: {
+                data: ['打似', '打算', '的撒', '的撒'],
+                class: "calculator"
+            },
+            C4: {
+                data: ['das的撒', '大', '打算', '打似'],
+            }
+        })
+        pptable.$updateData().cells({ // 更新行
+            R3_C4: {
+                data: "好滴呀",
+                style: {
+                    backgroundColor: "green",
+                },
+                html: "<input type='checkbox' value=''>"
+
+                
+            }
+        });
+
+        // 单击 高亮 双击编辑
+
+/* (function () { 
+    console.log(`%c       
+                 ........
+                         ....
+                            ....
+                              ....
+            ...                ....
+           ...                 ....
+          ...                  ....
+         ...                  .... 
+        ...                 ....
+       ...               ....
+         ................
+    `, `color: blue;`) 
+})()  */   
+    
+    </script>
+</body>
+</html>

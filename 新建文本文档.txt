@@ -1,0 +1,5 @@
+colspan    向右合并列
+rowspan  向下合并行
+cellIndex  列索引
+rowIndex  行索引
+cells 列集合
